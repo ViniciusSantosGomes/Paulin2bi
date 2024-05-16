@@ -1,0 +1,85 @@
+<html>
+<head>
+
+</head>
+<body>
+    <h2>Caluladora de Números</h2>
+    <div>
+        <label for="num1">Número 1:</label>
+        <input type="text" id="num1">
+    </div>
+    <div>
+        <label for="num2">Número 2:</label>
+        <input type="text" id="num2">
+    </div>
+    <button onclick="somarNumeros()">Somar</button>
+    <p id="resultado"></p>
+    <script src="java.js"></script>
+</body>
+</html>
+
+function somarNumeros() { 
+    var num1 = parseFloat(document.querySelector('#num1').value);
+    var num2 = parseFloat(document.querySelector('#num2').value);
+
+ if (!isNaN(num1) && !isNaN(num2)) {
+      var resultado = num1 + num2;
+     document.querySelector('#resultado').textContent = 'Resultado: ' + resultado;
+ } 
+    else {  
+     document.querySelector('#resultado').textContent = 'Por favor, insira números válidos.';
+    }
+    
+}
+execio 2
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Troco</title>
+</head>
+<body>
+  <h2>Caluladora de Números</h2>
+    <div>
+        <label for="num1">Número 1:</label>
+        <input type="text" id="num1">
+    </div>
+    <div>
+        <label for="num2">Número 2:</label>
+        <input type="text" id="num2">
+    </div>
+    <button onclick="somarNumeros()">Somar</button>
+    <p id="resultado"></p>
+    <div>
+      <label for="vpago">Valor pago:</label>
+      <input type="text" id="vpago">
+  </div>
+  <button onclick="exibirtroco()">calcular troco</button>
+  <p id="torcs"></p>
+    <script src="java2.js"></script>
+</body>
+</html>
+
+var resultado;
+function somarNumeros() {
+  var num1 = parseFloat(document.querySelector('#num1').value);
+  var num2 = parseFloat(document.querySelector('#num2').value);
+
+  if (!isNaN(num1) && !isNaN(num2)) {
+    resultado = num1 + num2;
+    document.querySelector('#resultado').textContent = 'Resultado: ' + resultado;
+  }
+  else {
+    document.querySelector('#resultado').textContent = 'Por favor, insira números válidos.';
+  }
+
+}
+function exibirtroco() {
+  var vpago = parseFloat(document.querySelector('#vpago').value);
+  if (!isNaN(vpago) && !isNaN(resultado) ) {
+    var torcs = vpago - resultado;
+    document.querySelector('#torcs').textContent = 'Troco é: ' + torcs;
+  }
+
+}
